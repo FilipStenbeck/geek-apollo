@@ -10,7 +10,7 @@ const typeDefs = gql`
     main: String
   }
   type Game {
-    id: String,
+    id: ID,
     name: String,
     rank: String,
     yearpublished: String,
@@ -27,9 +27,7 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     hotgames: () => hotgames(),
-    game(parent, args) {
-      return game(args.id);
-    },
+    game: (parent, args) => game(args.id)
   },
 
 };
