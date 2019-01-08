@@ -1,0 +1,54 @@
+{
+  "name": "geek-apollo",
+  "version": "1.0.0",
+  "description": "Apollo GraphQl server wrapping the geek-api",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "precommit": "eslint .",
+    "eslint": "eslint ."
+  },
+  "author": "Filip Stenbeck",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^2.3.1",
+    "graphql": "^14.0.2",
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "@zeit/eslint-config-node": "^0.3.0",
+    "eslint": "^5.12.0",
+    "nodemon": "^1.18.9"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@zeit/eslint-config-node"
+    ],
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "comma-dangle": [
+        "error",
+        "only-multiline"
+      ],
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "no-shadow": [
+        "warn",
+        {
+          "builtinGlobals": false,
+          "hoist": "functions",
+          "allow": [
+            "res"
+          ]
+        }
+      ]
+    }
+  }
+}
